@@ -1,0 +1,12 @@
+jaffle_shop:
+    target: duckdb
+    outputs:
+        duckdb:
+            type: duckdb
+            path: ../duckdb/analytics.duckdb
+            schema: public
+            threads: 4 
+            attach:
+                - path: ../duckdb/source_data.duckdb
+                  alias: raw
+                  read_only: true
