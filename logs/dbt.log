@@ -1,0 +1,9 @@
+==================== 2026-09-23T14:50:16.778231Z | 01a0cebe-f747-7ec1-b3d6-8fb4a466af9b ====================
+14:50:16.778438 [info ]: Installing dbt project and profile setup
+14:50:16.796286 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+14:50:16.798339 [info ]: Success Project created successfully!
+14:50:16.799314 [info ]: Info Project name: jaffe_duckdb
+14:50:16.800038 [info ]: Info Project directory: jaffe_duckdb
+14:52:57.622331 [info ]: Info Setting up your profile...
+14:52:57.624892 [info ]: Loading ~/.dbt/profiles.yml
+14:52:57.631395 [info ]: Info Creating new profile...
