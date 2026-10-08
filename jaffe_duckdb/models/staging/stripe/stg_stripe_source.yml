@@ -1,0 +1,16 @@
+version: 2
+
+sources: 
+    - name: stripe
+      description: Stripe contains payment data 
+      database: raw 
+      schema: stripe 
+      tables:
+        - name: payment
+          description: One record per payment   
+          config:
+            loaded_at_field: _batched_at 
+            freshness:
+              warn_after: {count: 15, period: day}
+              error_after: {count: 30, period: day}
+
