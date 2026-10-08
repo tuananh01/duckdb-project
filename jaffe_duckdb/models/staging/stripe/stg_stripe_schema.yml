@@ -1,0 +1,43 @@
+version: 2
+
+models:
+    - name: stg_stripe__payments
+      description: Staged payments data from our stripe app.
+      columns:
+        - name: payment_id
+          description: Primary key for payments
+          tests:
+            - not_null
+            - unique
+
+        - name: order_id
+          description: Foreign key to stg_jaffle_shop__orders.order_id.
+          tests:
+            - relationships:
+                arguments:
+                    to: ref('stg_jaffle_shop__orders')
+                    field: order_id
+
+        - name: payment_method
+          description: '{{ doc("payment_method") }}'
+
+        - name: status
+          description: Status of order 
+          tests:
+            - accepted_values:
+                arguments:
+                    values:
+                    - success
+                    - fail
+                    
+
+        - name: amount
+          description: Amount of the payment in dollars.
+          tests:
+            - not_null
+         
+
+        - name: created_at
+          description: Timestamp when the payment was created.
+          tests: 
+            - not_null
