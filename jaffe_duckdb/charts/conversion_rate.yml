@@ -1,0 +1,25 @@
+source: analytics_db
+
+queries:
+  get_conversion_data:
+    sql: |
+      SELECT 
+        month, 
+        conversion_rate 
+      FROM {{ ref('conversion_rate') }}
+      ORDER BY month
+
+charts:
+  conversion_rate_chart:
+    type: line
+    query: get_conversion_data
+    x: month
+    y: conversion_rate
+    title: "Monthly Conversion Rate"
+    style:
+      axis_y:
+        position: left
+      axis_x:
+        type: ordinal
+      endpoint_labels:
+        visible: true
